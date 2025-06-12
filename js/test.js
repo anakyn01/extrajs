@@ -88,6 +88,7 @@ for (let i=0; i < counter; i++){
     let y = Math.random() * yMax;
     let guess = ptron.activate([x,y, ptron.bias]);
     //ptron.activate 통해 추론한 guess값을 기준으로 시각화(blue or black)
+    let color = ((guess == 0) ? "blue":"black");
     plotter.plotPoint(x, y, color);
     //실제 함수와 비교해 오답이면  errors++
     if((y > f(x) && guess == 0) || (y < f(x) && guess == 1)) {errors++}
